@@ -57,5 +57,32 @@ namespace TestingRockPaperScissor
         {
             Assert::AreEqual("Draw", winner_is("Scissors", "Scissors"));
         }
+        // Test cases for invalid inputs
+        TEST_METHOD(InvalidInputPlayer1)
+        {
+            Assert::AreEqual("Invalid", winner_is("Lizard", "Rock"));
+        }
+
+        TEST_METHOD(InvalidInputPlayer2)
+        {
+            Assert::AreEqual("Invalid", winner_is("Rock", "Spock"));
+        }
+
+        TEST_METHOD(BothInvalidInputs)
+        {
+            Assert::AreEqual("Invalid", winner_is("Lizard", "Spock"));
+        }
+
+        // Test cases for empty inputs
+        TEST_METHOD(EmptyInputPlayer1)
+        {
+            Assert::AreEqual("Invalid", winner_is("", "Rock"));
+        }
+
+        TEST_METHOD(EmptyInputPlayer2)
+        {
+            Assert::AreEqual("Invalid", winner_is("Rock", ""));
+        }
+
 	};
 }
